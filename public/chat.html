@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Socket.io chat app</title>
+
+      <!-- Bootstrap CSS -->
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+         crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="assets/chat.css" />
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <h1 class="text-center pt-3 text-white">Socket.io Chat App</h1>
+      <div class="container py-3 px-4">
+         <div class="row rounded-lg">
+            <!-- Users box-->
+            <div class="col-md-5">
+               <div class="panel bg-white rounded shadow">
+                  <div class="bg-gray px-4 py-2 bg-light">
+                     <p class="h5 mb-0 py-1">Room name</p>
+                  </div>
+
+                  <div class="messages-box">
+                     <div class="list-group rounded-0">
+                        <div class="list-group-item list-group-item-action rounded-0 border-0">
+                           <div class="media">
+                              <div class="media-body ml-4">
+                                 <div class="d-flex align-items-center justify-content-between mb-1">
+                                    <h6 id="roomName" class="mb-0"># Public</h6>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="panel bg-white rounded shadow mt-2">
+                  <div class="bg-gray px-4 py-2 bg-light">
+                     <p class="h5 mb-0 py-1">Users</p>
+                  </div>
+
+                  <div class="messages-box">
+                     <div id="userList" class="list-group rounded-0">
+                        <!-- User1-->
+                     </div>
+                  </div>
+               </div>
+               <div class="panel bg-white rounded shadow mt-2">
+                  <div class="bg-gray px-4 py-2 bg-light">
+                     <p class="h5 mb-0 py-1">Profile</p>
+                  </div>
+
+                  <div class="messages-box">
+                     <div class="list-group rounded-0">
+                        <div class="list-group-item list-group-item-action rounded-0 border-0">
+                           <div class="media align-items-center">
+                              <div class="media-body ml-4">
+                                 <div class="d-flex align-items-center justify-content-between mb-1">
+                                    <h6 class="mb-0">
+                                       <a href="/index.html">Leave Room</a>
+                                    </h6>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Chat Box-->
+            <div class="col-md-7">
+               <div style="height: 500px;" id="msgBody" class="panel px-4 py-5 chat-box bg-white px-0 rounded-lg shadow overflow-auto">
+                  <!-- Sender Message-->
+                  <!-- <div class="media w-50 mb-3">
+                     <img
+                        src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg"
+                        alt="user"
+                        width="50"
+                        class="rounded-circle"
+                     />
+                     <div class="media-body ml-3">
+                        <div class="bg-light rounded py-2 px-3 mb-2">
+                           <p class="text-small mb-0 text-muted">Test, which is a new approach</p>
+                        </div>
+                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                     </div>
+                  </div> -->
+               </div>
+
+               <!-- Typing area -->
+               <form id="chatForm" class="bg-light shadow my-2">
+                  <div class="input-group">
+                     <input
+                        id="message"
+                        type="text"
+                        placeholder="Type a message"
+                        aria-describedby="button-addon2"
+                        class="form-control border-0 py-4 bg-light"
+                     />
+                     <div class="input-group-append">
+                        <button id="button-addon2" type="submit" class="btn btn-link">
+                           <i class="fa fa-paper-plane"></i>
+                           Send
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
+      <!-- QS.js -->
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.3/qs.min.js"
+         integrity="sha256-lSPkSu/D04IeqWOhTgTf5tLzNFEc37oNE9ysGS9PdK4="
+         crossorigin="anonymous"
+      ></script>
+      <!-- Socket.io -->
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="js/main.js"></script>
+   </body>
+</html>

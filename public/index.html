@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Socket.io chat app</title>
+
+      <!-- Bootstrap CSS -->
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+         crossorigin="anonymous"
+      />
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <div class="container m-auto">
+         <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="p-2">
+               <h1 class="text-center">Login Chat App</h1>
+            </div>
+
+            <div class="p-4 rounded-lg chat-box bg-white shadow">
+               <!-- Login Form Box-->
+               <form action="chat.html" method="GET">
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Full name</label>
+                     <input type="text" class="form-control" name="fullName" id="fullName" aria-describedby="emailHelp" />
+                     <small>Full name will be showed in your chat room</small>
+                  </div>
+
+                  <div class="form-group">
+                     <label for="chatRooms">Choose the Chat room</label>
+                     <select class="form-control" name="chatRoom" id="chatRooms">
+                        <option value="Public">Public</option>
+                        <option value="Private">Private</option>
+                        <option value="Company">Company</option>
+                     </select>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Go to Chat</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

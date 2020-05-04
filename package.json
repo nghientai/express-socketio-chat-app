@@ -1,0 +1,18 @@
+{
+   "name": "express-socketio-chat",
+   "version": "0.0.1",
+   "description": "The first socket.io chating app",
+   "main": "server.js",
+   "scripts": {
+      "start": "nodemon server"
+   },
+   "author": "Tai Nguyen",
+   "dependencies": {
+      "express": "^4.17.1",
+      "moment": "^2.25.1",
+      "socket.io": "^2.3.0"
+   },
+   "devDependencies": {
+      "nodemon": "^2.0.3"
+   }
+}
